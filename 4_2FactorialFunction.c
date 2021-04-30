@@ -1,34 +1,35 @@
 #include <stdio.h>
 int facto1(int A);
-int facto2(int B);
-int facto3(int C);
-int main()
-{
-	
-	int n,r,k,N,R,K;
-	int result;
-	printf("Enter the Value of n");
-	scanf("%d", &n);
-	N = facto1(n);
-	printf("%d\n",N);
-	
-	printf("Enter the value of r");
-	scanf("%d", &r);
-    R = facto2(r);
-    printf("%d\n",R);
-	
-	printf(" Enter n-r");
-	scanf("%d", &k);
-	K = facto3(k);
-	printf("%d\n",K);
+int combo(int nCr, int M);
 
-	result=N/R*(K);
+
+int main()
+{ 	int N, R;
+	int ans;
+	printf("Enter the value of N");
+	scanf("%d",&N);
+	printf("Enter the value of C");
+	scanf("%d",&R);
 	
-	printf(" nCr=%d",result);
 	
+	ans= combo(N,R);               // this will calculate nCR =  n!/r!(n-r)!
+	printf("%d",ans);
 return 0;	
 	
 }
+
+
+
+int combo(int n, int r)
+
+{
+	int ans;
+
+	ans=(facto1(n)/facto1(r))*facto1(n-r);
+}
+
+
+
 
 int facto1(int A)
 {
@@ -42,32 +43,3 @@ int facto1(int A)
 	    	
 	    return fact1;	 
 }
-
-int facto2(int B)
-{
-	int fact2=1,i;
-			
-	for(i=1;i<=B;i++)
-	{
-		fact2=fact2*i;
-	}
-			
-	    	
-	    	
-	return fact2;
-}
-
-int facto3(int C)
-	{
-		int fact3=1,i;
-			for(i=1;i<=C;i++)
-			{
-				fact3=fact3*i;
-			}
-			
-	    
-	    	
-	    return fact3;
-	}
-		
-		
