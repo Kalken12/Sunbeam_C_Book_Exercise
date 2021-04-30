@@ -1,31 +1,39 @@
-#include<stdio.h>
-void drawline();
- int i, limit;
- char A;
-void main()
+#include <stdio.h>
+#include <conio.h>
+
+int n, i;
+    char A; 
+void drawline(char A, int n)
 {
-	printf("Enter the Character");
-	scanf("%c",&A);
-	
-	printf("Enter the limit ");
-	scanf("%d",&limit);
-		drawline();
-		
-	printf("\nCharacter\t\tASCII\n");
-		
-		drawline();
-	
-	
-	printf("\nA-Z\t\t\t65-90\n");
-	printf("a-z\t\t\t97-122\n");
-	printf("0-9\t\t\t48-57\n");
-	
-		drawline();
-}
-void drawline()
-{
-	for(i=1; i<=limit; i++)
+	int  itretion;
+	for(itretion=1; itretion<=n; itretion++)
 	{
 		printf("%c",A);
 	}
+	printf("\n");
+
+	
+}
+
+void asciiContent()
+{
+	   printf("Character\t\t\t\tASCII\n");
+	
+	        drawline( A,  n);
+
+	   printf("\nA-Z\t\t\t\t\t65-90\n");
+	   printf("a-z\t\t\t\t\t97-122\n");
+	   printf("0-9\t\t\t\t\t48-57\n");	
+}
+
+void main()
+{   
+  	  printf("Enter character you want to print..");
+	  scanf("%c",&A);
+	  scanf("%d",&n);
+	
+	  drawline( A,  n);
+	  asciiContent();
+	  drawline( A,  n);
+
 }
